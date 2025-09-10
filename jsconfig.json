@@ -1,7 +1,23 @@
+// {
+//   "compilerOptions": {
+//     "paths": {
+//       "@/*": ["./*"]
+//     }
+//   }
+// }
+
 {
   "compilerOptions": {
+    "baseUrl": ".",               // lets you use absolute imports
     "paths": {
-      "@/*": ["./*"]
-    }
-  }
+      "@/*": ["./*"]              // allows @/ to resolve to project root
+    },
+    "jsx": "preserve",            // keeps JSX as-is for React
+    "moduleResolution": "node",   // tells VS Code how to resolve modules
+    "target": "esnext",           // enables modern JS features
+    "allowJs": true,              // allows JS files
+    "checkJs": false              // don’t throw errors in plain JS files
+  },
+  "exclude": ["node_modules"],    // don’t scan node_modules
+  "include": ["next-env.d.ts", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
 }
